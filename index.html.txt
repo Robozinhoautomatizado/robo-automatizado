@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Robô Automatizado</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Robô Automatizado</h1>
+      <p>Seu assistente de trading inteligente</p>
+      <a href="#planos" class="btn">Quero Começar Agora</a>
+    </header>
+
+    <section class="benefits">
+      <div class="benefit">
+        <h2>📦 Instalação Rápida</h2>
+        <p>Receba o robô pronto para usar com manual completo.</p>
+      </div>
+      <div class="benefit">
+        <h2>📊 3 Pacotes Exclusivos</h2>
+        <p>Essencial, Suporte Total ou VIP Completo.</p>
+      </div>
+      <div class="benefit">
+        <h2>📱 Suporte Garantido</h2>
+        <p>Planos com acompanhamento via WhatsApp.</p>
+      </div>
+    </section>
+
+    <section id="planos" class="plans">
+      <h2>Escolha seu Pacote</h2>
+      <div class="plan">
+        <h3>Pacote Essencial</h3>
+        <p>Robô + Manual</p>
+        <p class="price">R$97</p>
+        <a href="#" class="btn">Comprar</a>
+      </div>
+      <div class="plan">
+        <h3>Suporte Total</h3>
+        <p>Robô + Manual + Suporte 1 mês</p>
+        <p class="price">R$147</p>
+        <a href="#" class="btn">Comprar</a>
+      </div>
+      <div class="plan">
+        <h3>VIP Completo</h3>
+        <p>Inclui VPS + Suporte 3 meses</p>
+        <p class="price">R$297</p>
+        <a href="#" class="btn">Comprar</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Robô Automatizado — Vinicius R.</p>
+    </footer>
+  </body>
+</html>
+
