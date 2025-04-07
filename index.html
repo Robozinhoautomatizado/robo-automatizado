@@ -3,29 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Robô Automatizado</title>
+  <title>Robô Automatizado | Economize 10h/semana no Trading</title>
+  <meta name="description" content="Automatize suas operações com nosso robô de trading. Pacotes a partir de R$97 com suporte 24h.">
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1995/1995526.png" />
+  <script src="scripts.js" defer></script>
 </head>
 <body>
+  <!-- Barra de Urgência -->
+  <div class="alert-bar">
+    🚨 <strong>ÚLTIMAS 3 UNIDADES</strong> do pacote Essencial por R$97! 
+    <a href="#planos" style="color: #FFD700; margin-left: 10px;">GARANTA O SEU →</a>
+  </div>
+
   <header>
-    <h1> Robô Automatizado</h1>
-    <p>Seu assistente de trading inteligente</p>
-    <a href="#planos" class="btn">Quero Começar Agora</a>
+    <h1>🤖 Robô Automatizado PRO</h1>
+    <p>Seu assistente de trading 24/7 que opera enquanto você dorme!</p>
+    <a href="#planos" class="btn">Quero Economizar Tempo</a>
   </header>
 
   <section class="features">
     <div class="card">
-      <h2>📦 Instalação Rápida</h2>
-      <p>Receba o robô pronto para usar com manual completo.</p>
+      <h2>📦 Instalação em 2 Minutos</h2>
+      <p>Robô pré-configurado + vídeo tutorial passo a passo.</p>
     </div>
     <div class="card">
-      <h2>💼 3 Pacotes Exclusivos</h2>
-      <p>Escolha entre Essencial, Suporte Total ou VIP Completo.</p>
+      <h2>📈 Resultados Comprovados</h2>
+      <p>+120 clientes em 2024 com ROI médio de 12% ao mês.</p>
+      <img src="https://via.placeholder.com/250x150/2b5876/fff?text=Backtest+ROI+12%" alt="Resultados" style="border-radius:8px;margin-top:10px;">
     </div>
     <div class="card">
-      <h2>📞 Suporte Garantido</h2>
-      <p>Acompanhamento por WhatsApp com planos de 1 a 3 meses.</p>
+      <h2>📞 Suporte VIP no WhatsApp</h2>
+      <p>Resposta em menos de 1h (das 8h às 22h).</p>
     </div>
   </section>
 
@@ -33,23 +42,24 @@
     <h2>Escolha seu Pacote</h2>
     <div class="cards">
       <div class="card">
-        <h3> Essencial</h3>
-        <p>Robô + Manual</p>
-       <strong>R$97</strong>
-    
-        <a class="btn-outline" href="https://pay.hotmart.com/Y99082628J?bid=1743968599811" target="_blank">Comprar Agora</a>
+        <h3>🔥 Essencial</h3>
+        <p>Robô + Manual + Atualizações</p>
+        <strong>R$97</strong>
+        <small style="color:red;font-weight:bold;">(Economize R$203 vs. Suporte Total)</small>
+        <a class="btn-outline" href="https://pay.hotmart.com/Y99082628J?bid=1743968599811" target="_blank">🚀 COMPRAR AGORA</a>
       </div>
       <div class="card destaque">
-        <h3>Suporte Total</h3>
+        <h3>⭐ Suporte Total</h3>
         <p>Robô + Manual + Suporte 1 mês</p>
-        <strong></strong>
-        <a class="btn" href="#">EM BREVE NOVIDADES</a>
+        <strong>R$297</strong>
+        <div id="countdown">⏳ Lançamento em: <strong>15 dias</strong></div>
+        <a class="btn" href="#waitlist">AVISE-ME DO LANÇAMENTO</a>
       </div>
       <div class="card">
-        <h3> VIP Completo</h3>
+        <h3>💎 VIP Completo</h3>
         <p>Inclui VPS + Suporte 3 meses</p>
-        <strong></strong>
-        <a class="btn" href="#">EM BREVE NOVIDADES</a>
+        <strong>R$597</strong>
+        <a class="btn" href="#waitlist">AVISE-ME DO LANÇAMENTO</a>
       </div>
     </div>
   </section>
@@ -57,21 +67,39 @@
   <section class="faq">
     <h2>Perguntas Frequentes</h2>
     <div class="faq-item">
-      <h4>Preciso entender de programação?</h4>
-      <p>Não! Você receberá um passo a passo simples e direto.</p>
+      <h4>❓ Preciso entender de programação?</h4>
+      <p>Não! Basta seguir nosso manual em vídeo (incluído no pacote).</p>
     </div>
     <div class="faq-item">
-      <h4>O robô funciona em conta demo?</h4>
-      <p>Sim, é ideal para testar antes de ir para o real.</p>
+      <h4>❓ O robô funciona em conta demo?</h4>
+      <p>Sim! Recomendamos testar por 7 dias antes de operar no real.</p>
     </div>
     <div class="faq-item">
-      <h4>Tenho suporte se tiver dúvidas?</h4>
-      <p>Sim, dependendo do pacote adquirido.</p>
+      <h4>❓ Posso cancelar a qualquer momento?</h4>
+      <p>Sim, sem taxas ou pegadinhas.</p>
     </div>
   </section>
 
+  <!-- Pop-up de Captura -->
+  <div id="lead-popup">
+    <div class="popup-content">
+      <span id="close-popup">&times;</span>
+      <h3>🎁 <strong>Guia Grátis:</strong> 5 Estratégias de Trading Automatizado</h3>
+      <form action="https://formsubmit.co/seu-email@provedor.com" method="POST">
+        <input type="email" name="email" placeholder="Seu melhor e-mail" required>
+        <input type="hidden" name="_subject" value="Novo lead do robô!">
+        <button type="submit">QUERO RECEBER AGORA</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Botão do WhatsApp -->
+  <a href="https://wa.me/5511999999999?text=Quero+comprar+o+Robô+Automatizado" class="whatsapp-float">
+    <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp">
+  </a>
+
   <footer>
-    <p>&copy; 2025 Robô Automatizado | Desenvolvido por V.R.</p>
+    <p>&copy; 2025 Robô Automatizado PRO |</p>
   </footer>
 </body>
 </html>
