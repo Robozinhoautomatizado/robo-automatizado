@@ -282,4 +282,9 @@ footer {
   .features {
     grid-template-columns: 1fr;
   }
+@media (max-width: 768px) {
+  .planos .cards {
+    grid-template-columns: 1fr !important;
+  }
+}
 }
