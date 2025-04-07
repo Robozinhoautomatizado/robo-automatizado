@@ -1,50 +1,59 @@
 // ===== POP-UP DE CAPTURA =====
 document.addEventListener('DOMContentLoaded', function() {
   // Exibe pop-up após 15 segundos
-  setTimeout(showPopup, 15000);
+  setTimeout(openPopup, 15000);
   
-  // Fecha pop-up ao clicar no X
-  document.getElementById('close-popup').addEventListener('click', hidePopup);
+  // Fecha pop-up
+  document.querySelector('.close-popup').addEventListener('click', closePopup);
   
-  // Fecha pop-up ao clicar fora
+  // Fecha ao clicar fora
   document.getElementById('lead-popup').addEventListener('click', function(e) {
-    if (e.target === this) hidePopup();
+    if (e.target === this) closePopup();
   });
   
-  // Inicia contador regressivo
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
+  // Inicia contador
+  startCountdown();
 });
 
-function showPopup() {
+function openPopup() {
   document.getElementById('lead-popup').style.display = 'flex';
 }
 
-function hidePopup() {
+function closePopup() {
   document.getElementById('lead-popup').style.display = 'none';
 }
 
 // ===== CONTADOR REGRESSIVO =====
-function updateCountdown() {
-  const endDate = new Date('2025-05-01').getTime(); // Altere a data conforme necessário
-  const now = new Date().getTime();
-  const distance = endDate - now;
+function startCountdown() {
+  const countdownElement = document.querySelector('.countdown');
+  if (!countdownElement) return;
   
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const endDate = new Date(countdownElement.dataset.date).getTime();
   
-  const countdownElement = document.getElementById('countdown');
-  if (countdownElement) {
+  const update = () => {
+    const now = new Date().getTime();
+    const distance = endDate - now;
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    
     if (distance < 0) {
       countdownElement.innerHTML = '🎉 PACOTE LIBERADO!';
     } else {
-      countdownElement.innerHTML = `⏳ Lançamento em: <strong>${days} dias</strong>`;
+      document.getElementById('days').textContent = days;
     }
+  };
+  
+  update();
+  setInterval(update, 86400000); // Atualiza a cada 24h
+}
+
+// ===== ANIMAÇÃO DA BARRA DE URGÊNCIA =====
+function animateAlertBar() {
+  const alertBar = document.querySelector('.alert-bar');
+  if (alertBar) {
+    setInterval(() => {
+      alertBar.style.opacity = alertBar.style.opacity === '0.9' ? '1' : '0.9';
+    }, 2000);
   }
 }
 
-// ===== BOTÃO WHATSAPP =====
-// (Funcionalidade já inclusa no HTML - este código é opcional para analytics)
-document.querySelector('.whatsapp-float').addEventListener('click', function() {
-  // Adicione aqui tracking se necessário (ex: Google Analytics)
-  console.log('WhatsApp clicado');
-});
+animateAlertBar();
